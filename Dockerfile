@@ -13,7 +13,7 @@
 FROM   ubuntu:16.04
 
 # Set the Teamspeak version to download
-ENV TSV=3.2.0
+ENV TSV=3.7.0
 
 # Download and install everything from the repos.
 RUN    DEBIAN_FRONTEND=noninteractive \
@@ -25,9 +25,10 @@ RUN    DEBIAN_FRONTEND=noninteractive \
 
 # Download and install TeamSpeak 3
 # Add secondary/backup server as well -- allow users to choose in case of blacklisting.
-ADD    http://dl.4players.de/ts/releases/${TSV}/teamspeak3-server_linux_amd64-${TSV}.tar.bz2 ./
-ADD    CHECKSUMS ./
-RUN    sha256sum -c CHECKSUMS
+ADD https://files.teamspeak-services.com/releases/server/${TSV}/teamspeak3-server_linux_amd64-${TSV}.tar.bz2 ./
+#ADD    http://dl.4players.de/ts/releases/${TSV}/teamspeak3-server_linux_amd64-${TSV}.tar.bz2 ./
+#ADD    CHECKSUMS ./
+#RUN    sha256sum -c CHECKSUMS
 
 RUN    tar jxf teamspeak3-server_linux_amd64-$TSV.tar.bz2 && \
        mv teamspeak3-server_linux_amd64 /opt/teamspeak && \
