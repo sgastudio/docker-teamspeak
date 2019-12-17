@@ -10,9 +10,9 @@ For more information on TeamSpeak and check out it's [website][1].
 Running this will build you a docker image with the latest version of both
 docker-teamspeak and TeamSpeak itself.
 
-    git clone https://github.com/overshard/docker-teamspeak
+    git clone https://github.com/sgastudio/docker-teamspeak
     cd docker-teamspeak
-    docker build -t overshard/teamspeak .
+    docker build -t sgastudio/teamspeak .
 
 
 ## Running docker-teamspeak
