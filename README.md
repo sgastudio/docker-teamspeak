@@ -24,7 +24,7 @@ system you can map the ports to 9987, 10011, 30033 and no proxy is needed. i.e.
 directory on your host machine is already created before running
 `mkdir -p /mnt/teamspeak`.
 
-    sudo docker run -d=true -p=9987:9987/udp -p=10011:10011 -p=30033:30033 -v=/mnt/teamspeak:/data overshard/teamspeak /start
+    sudo docker run -d=true -p=9987:9987/udp -p=10011:10011 -p=30033:30033 -v=/mnt/teamspeak:/data sgastudio/teamspeak /start
 
 With Teamspeak v3.1 Teamspeak has changed it's license and license policy, before you can start the server you have to accept the License.
 This you can do by having a file called .ts3server_license_accepted in the working directory or define the enviroment variable
@@ -34,7 +34,7 @@ TS3SERVER_LICENSE=accept. For the later add to the docker command the following 
 
 E.g. 
 
-    sudo docker run -d=true -p=9987:9987/udp -p=10011:10011 -p=30033:30033 -v=/mnt/teamspeak:/data -e TS3SERVER_LICENSE='accept' overshard/teamspeak /start
+    sudo docker run -d=true -p=9987:9987/udp -p=10011:10011 -p=30033:30033 -v=/mnt/teamspeak:/data -e TS3SERVER_LICENSE='accept' sgastudio/teamspeak /start
 
 From now on when you start/stop docker-teamspeak you should use the container id
 with the following commands. To get your container id, after you initial run
